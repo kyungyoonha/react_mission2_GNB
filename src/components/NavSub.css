@@ -1,0 +1,30 @@
+.navSub {
+    background-color: #282c34;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navSub > a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.navSub > a:hover {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+.navSub > a.active {
+    background-color: #61dafb;
+    color: #282c34;
+    text-decoration: none;
+    font-weight: bold;
+}

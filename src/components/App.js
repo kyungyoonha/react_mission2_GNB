@@ -1,21 +1,25 @@
 import React from "react";
 import Header from "./Header";
 import { Route } from "react-router-dom";
-import home from "../pages/home";
-import productPage1 from "../pages/productPage1";
-import productPage2 from "../pages/productPage2";
-import productPage3 from "../pages/productPage3";
-import productPage4 from "../pages/productPage4";
+import Page1 from "../pages/Page1";
+import Page2 from "../pages/Page2";
+import Page3 from "../pages/Page3";
+import Page4 from "../pages/Page4";
+import "./App.css";
 
 function App() {
     return (
-        <div>
+        <div className="app">
             <Header />
-            <Route path="/" exact component={home} />
-            <Route path="/product1" component={productPage1} />
-            <Route path="/product2" component={productPage2} />
-            <Route path="/product3" component={productPage3} />
-            <Route path="/product4" component={productPage4} />
+            <Route path="/" exact component={Page1} />
+            <Route path="/Page1" exact component={Page1} />
+            <Route path="/Page1/:pageId" component={Page1} />
+            <Route path="/Page2" exact component={Page2} />
+            <Route path="/Page2/:pageId" component={Page2} />
+            <Route path="/Page3" exact component={Page3} />
+            <Route path="/Page3/:pageId" component={Page3} />
+            <Route path="/Page4" exact component={Page4} />
+            <Route path="/Page4/:pageId" component={Page4} />
         </div>
     );
 }
