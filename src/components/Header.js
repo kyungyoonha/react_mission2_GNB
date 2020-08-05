@@ -1,31 +1,24 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import NavSub from "./NavSub";
-import "./Header.css";
 
 function Header() {
-    const [subPage, setSubPage] = useState("");
-    const [openSub, setOpenSub] = useState(false);
-    const [mainPage, setMainPage] = useState("");
+    const [page, setPage] = useState("");
+    const [isToggle, setToggle] = useState(false);
 
-    const handleClickMainPage = (page) => {
-        setOpenSub(true);
-        setMainPage(page);
+    const onClickMainPage = (page) => {
+        setToggle(true);
+        setPage(page);
     };
 
-    const handleClickSubPage = (page) => {
-        setSubPage(page);
-    };
-
-    const handleClickHome = () => {
-        setSubPage("");
-        setOpenSub(false);
-        setMainPage("");
+    const onClickHome = () => {
+        setToggle(false);
+        setPage("");
     };
     return (
         <div className="header">
             <div className="header__Logo">
-                <Link to="/" onClick={handleClickHome}>
+                <Link to="/" onClick={onClickHome}>
                     GNB
                 </Link>
             </div>
@@ -34,39 +27,34 @@ function Header() {
                 <NavLink
                     to="/page1"
                     activeClassName="active"
-                    onClick={() => handleClickMainPage("page1")}
+                    onClick={() => onClickMainPage("page1")}
                 >
                     page1
                 </NavLink>
                 <NavLink
                     to="/page2"
                     activeClassName="active"
-                    onClick={() => handleClickMainPage("page2")}
+                    onClick={() => onClickMainPage("page2")}
                 >
                     page2
                 </NavLink>
                 <NavLink
                     to="/page3"
                     activeClassName="active"
-                    onClick={() => handleClickMainPage("page3")}
+                    onClick={() => onClickMainPage("page3")}
                 >
                     page3
                 </NavLink>
                 <NavLink
                     to="/page4"
                     activeClassName="active"
-                    onClick={() => handleClickMainPage("page4")}
+                    onClick={() => onClickMainPage("page4")}
                 >
                     page4
                 </NavLink>
             </div>
             {/* SUB PAGE NAV */}
-            <NavSub
-                open={openSub}
-                mainPage={mainPage}
-                subPage={subPage}
-                handleClickSubPage={handleClickSubPage}
-            />
+            {isToggle && <NavSub page={page} />}
         </div>
     );
 }

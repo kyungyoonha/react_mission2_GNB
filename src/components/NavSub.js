@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./NavSub.css";
 
 const routeMap = {
     page1: ["product1", "product2", "product3", "product4"],
@@ -9,18 +8,14 @@ const routeMap = {
     page4: ["price1", "price2", "price3", "price4"],
 };
 
-function NavSub({ open, mainPage, handleClickSubPage }) {
-    if (!open) return null;
-    console.log(mainPage);
+function NavSub({ page }) {
     return (
         <div className="navSub">
-            {routeMap[mainPage].map((sub) => (
+            {routeMap[page].map((sub) => (
                 <NavLink
                     key={sub}
-                    to={`/${mainPage}/${sub}`}
-                    // className={selectedSubPage === sub ? "active" : ""}
+                    to={`/${page}/${sub}`}
                     activeClassName="active"
-                    onClick={() => handleClickSubPage(sub)}
                 >
                     {sub}
                 </NavLink>

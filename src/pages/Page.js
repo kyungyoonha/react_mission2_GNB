@@ -1,12 +1,13 @@
 import React from "react";
-import "./Page.css";
-import defaultData from "../defaultData";
+import { defaultData } from "../constants";
 
-function Page3({ match }) {
-    const pageId = match.params.pageId;
+function Page({ match }) {
+    const page = match.url.split("/")[1];
+    const pageId = match.url.split("/")[2];
+    // const pageId = match.params.pageId;
     let contentList;
     if (!pageId) {
-        contentList = defaultData.filter((data) => data.page === "page3");
+        contentList = defaultData.filter((data) => data.page === page);
     } else {
         contentList = defaultData.filter((data) => data.productId === pageId);
     }
@@ -15,7 +16,7 @@ function Page3({ match }) {
         <div className="page">
             <div className="page__container">
                 <div className="page__main">
-                    <h1 className="page__mainTitle">Page3</h1>
+                    <h1 className="page__mainTitle">{page}</h1>
                     <div className="page__mainContent">
                         본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용
                     </div>
@@ -31,4 +32,4 @@ function Page3({ match }) {
     );
 }
 
-export default Page3;
+export default Page;
