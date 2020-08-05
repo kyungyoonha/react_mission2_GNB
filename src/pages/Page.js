@@ -2,9 +2,9 @@ import React from "react";
 import { defaultData } from "../constants";
 
 function Page({ match }) {
-    const page = match.url.split("/")[1];
-    const pageId = match.url.split("/")[2];
-    // const pageId = match.params.pageId;
+    const page = match.url.split("/")[1]; // 'page1'
+    const pageId = match.url.split("/")[2]; // 'product1
+
     let contentList;
     if (!pageId) {
         contentList = defaultData.filter((data) => data.page === page);
@@ -18,7 +18,9 @@ function Page({ match }) {
                 <div className="page__main">
                     <h1 className="page__mainTitle">{page}</h1>
                     <div className="page__mainContent">
-                        본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용
+                        본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용
+                        본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용
+                        본문내용본문내용본문내용본문내용본문내용본문내용본문내용본문내용
                     </div>
                 </div>
                 {contentList.map((data) => (
