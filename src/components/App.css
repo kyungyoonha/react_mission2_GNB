@@ -9,10 +9,10 @@
 .header__navMain > a:hover { color: #61dafb;}
 .header__navMain > a.active { border-bottom: 4px solid#61dafb; color: #61dafb; font-weight: bold; }
 
-.navSub { display: flex; justify-content: center; align-items: center; height: 80px; width: 100%; background-color: #282c34; }
-.navSub > a { display: flex; align-items: center; padding: 0 30px; height: 100%; color: white; }
-.navSub > a:hover { color: #61dafb; }
-.navSub > a.active { background-color: #61dafb; color: #282c34; font-weight: bold; }
+.headerSub { display: flex; justify-content: center; align-items: center; height: 80px; width: 100%; background-color: #282c34; }
+.headerSub > a { display: flex; align-items: center; padding: 0 30px; height: 100%; color: white; }
+.headerSub > a:hover { color: #61dafb; }
+.headerSub > a.active { background-color: #61dafb; color: #282c34; font-weight: bold; }
 
 .page { flex: 1; background-color: #f7f7f7; }
 .page__container { flex: 1; margin: 20px auto; padding: 20px; width: 1160px; background-color: white; border: 1px solid#e3e3e4; border-radius: 2%; }

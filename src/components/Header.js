@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import NavSub from "./NavSub";
+import HeaderSub from "./HeaderSub";
 
 function Header({ history }) {
     console.log("header");
@@ -66,7 +66,7 @@ function Header({ history }) {
                 </NavLink>
             </div>
             {/* SUB PAGE NAV */}
-            {isToggle && <NavSub page={page} />}
+            {isToggle && <HeaderSub page={page} />}
         </div>
     );
 }

@@ -8,10 +8,9 @@ const routeMap = {
     page4: ["price1", "price2", "price3", "price4"],
 };
 
-function NavSub({ page }) {
-    console.log("navsub");
+function HeaderSub({ page }) {
     return (
-        <div className="navSub">
+        <div className="headerSub">
             {routeMap[page].map((sub) => (
                 <NavLink
                     key={sub}
@@ -25,4 +24,4 @@ function NavSub({ page }) {
     );
 }
 
-export default NavSub;
+export default HeaderSub;

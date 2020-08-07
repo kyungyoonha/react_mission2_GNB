@@ -2,7 +2,7 @@ import React from "react";
 import { defaultData } from "../constants";
 
 function Page({ history }) {
-    const page = history.location.pathname.split("/")[1]; // 'page1'
+    const page = history.location.pathname.split("/")[1] || "page1"; // 'page1'
     const pageId = history.location.pathname.split("/")[2]; // 'product1
 
     let contentList;
