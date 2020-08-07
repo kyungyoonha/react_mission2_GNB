@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import NavSub from "./NavSub";
 
-function Header() {
+function Header({ history }) {
+    console.log("header");
+    const currentPage = history.location.pathname.split("/")[1];
+
     const [page, setPage] = useState("");
     const [isToggle, setToggle] = useState(false);
+
+    useEffect(() => {
+        if (currentPage) {
+            setPage(currentPage);
+            setToggle(true);
+        }
+    }, [currentPage]);
 
     // page 클릭시 서브메뉴 활성화
     const onClick = (page) => {

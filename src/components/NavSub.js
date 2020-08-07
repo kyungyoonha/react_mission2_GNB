@@ -9,6 +9,7 @@ const routeMap = {
 };
 
 function NavSub({ page }) {
+    console.log("navsub");
     return (
         <div className="navSub">
             {routeMap[page].map((sub) => (
